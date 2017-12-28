@@ -34,11 +34,16 @@
 	      <div class="col-md-4 div_post"></div>
 	    </div>
 	</div>
+	
+	
 	<c:forEach items="${value}" var="v">
         <c:out value="${v.customerId}"/>
         <c:out value="${v.name}"/>
         <c:out value="${v.age}"/><br>
     </c:forEach>
+	
+	
+	
 	<!-- button section -->
 	<div class="">
 		<a href="/board/write" class="">글쓰기</a>
