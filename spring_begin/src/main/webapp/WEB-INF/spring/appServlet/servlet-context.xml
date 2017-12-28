@@ -34,17 +34,16 @@
 		<!-- jsp include 를 사용했다면 include 당하는 쪽의 jsp 페이지에 아래 지시문을 적어주어야 한글이 깨지지 않는다. <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>--> 
 	</beans:bean>
 	
-	<!-- <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <beans:property name="url" value="jdbc:mysql://localhost:3306/pp1"/>
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/board"/>
         <beans:property name="username" value="root"/>
         <beans:property name="password" value="1234"/>
-    </beans:bean> -->
+    </beans:bean>
 
-    <!--mybatis
     <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource"/>
-        <beans:property name="configLocation" value="classpath:/mybatis/Mapper-config.xml"/>여기서 클래스패스는 resource부터 시작한다
+        <beans:property name="configLocation" value="classpath:/mybatis/Mapper-config.xml"/><!-- 여기서 클래스패스는 resource부터 시작한다 -->
     </beans:bean>
 
     <beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -53,7 +52,7 @@
 
     <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <beans:property name="dataSource" ref="dataSource" />
-    </beans:bean> -->
+    </beans:bean>
 	
 	
 </beans:beans>

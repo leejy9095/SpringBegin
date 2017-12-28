@@ -7,9 +7,12 @@
 	<title>write page</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+
+	<form type="submit" >
+		<span> 제목 : </span><input id="input_title" size="30" type="text" value="" />
+		<br>
+		<span> 내용 : </span><input id="input_content" style="height:100px;" size="30" type="text" value="" />
+	</form>
 
 </body>
 </html>
