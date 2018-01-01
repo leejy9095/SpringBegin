@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.my.testA.dao.CustomerDAOMapper">
+<mapper namespace="com.my.begin.dao.board.CustomerDAOMapper">
 
     <resultMap type="com.my.testA.model.Customer" id="MemberResultMap">
         <result property="customerId" column="customerId" /><!--property가 클래스고 뒤에 컬럼이 db이다-->

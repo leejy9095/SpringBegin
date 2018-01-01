@@ -2,6 +2,8 @@ package com.my.begin.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,30 +31,36 @@ public class BoardListController {
 		logger.info("/list in");
 		
 		List<Board> boardList = boardDAO.findAll();
-		model.addAttribute("value", boardList);
+		model.addAttribute("boardList", boardList);
 		
 		return "board/board_list";
 	}
-	//datasource이용 connection을 직접 잡는 방식(insert)
+	
+	//datasource이용 connection을 직접 잡는 방식(write)
 	@RequestMapping(value = "/board/write", method = RequestMethod.GET)
-	public String boardWrite(@RequestParam String name, @RequestParam int age, ModelMap modelMap) {
-		
-		/*HttpServletRequest request)
-	{
-		String a = request.getParameter("a");
-		String b = request.getParameter("b");*/
-		/*logger.info("/write in");
-		
-		 System.out.println("name: " + name);
-	        System.out.println("age: " + age);
-
-	        customerDAO.insertByCustomerId(name,age);
-	        List<Customer> customerList = customerDAO.findAll();
-
-	        modelMap.put("value", customerList);*/
-		
-		
+	public String boardWrite(Model model) {
+		logger.info("/write in");
+			
 		return "board/board_write";
+	}
+	
+	//datasource이용 connection을 직접 잡는 방식(Save)
+	@RequestMapping(value = "/board/save", method = RequestMethod.GET)
+	public String boardWrite(HttpServletRequest request, ModelMap modelMap) {
+		logger.info("/save in");
+		
+		String inputTitle = request.getParameter("input_title");
+		String inputContent = request.getParameter("input_content");
+		
+		System.out.println("inputTitle: " + inputTitle);
+	    System.out.println("inputContent: " + inputContent);
+
+	    boardDAO.insertByBoardIndex(inputTitle,inputContent);
+	    List<Board> boardList = boardDAO.findAll();
+
+	    modelMap.put("boardList", boardList);
+		
+		return "board/board_list";
 	}
 	
 	

@@ -41,18 +41,19 @@
         <beans:property name="password" value="1234"/>
     </beans:bean>
 
-    <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <beans:property name="dataSource" ref="dataSource" />
+    </beans:bean>
+    
+    <!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource"/>
-        <beans:property name="configLocation" value="classpath:/mybatis/Mapper-config.xml"/><!-- 여기서 클래스패스는 resource부터 시작한다 -->
+        <beans:property name="configLocation" value="classpath:/mybatis/Mapper-config.xml"/>여기서 클래스패스는 resource부터 시작한다
     </beans:bean>
 
     <beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <beans:constructor-arg ref="sqlSessionFactory"/>
-    </beans:bean>
+    </beans:bean> -->
 
-    <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <beans:property name="dataSource" ref="dataSource" />
-    </beans:bean>
 	
 	
 </beans:beans>

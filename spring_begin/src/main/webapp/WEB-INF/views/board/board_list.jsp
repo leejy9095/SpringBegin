@@ -36,10 +36,11 @@
 	</div>
 	
 	
-	<c:forEach items="${value}" var="v">
-        <c:out value="${v.customerId}"/>
-        <c:out value="${v.name}"/>
-        <c:out value="${v.age}"/><br>
+	<c:forEach items="${boardList}" var="v">
+        <c:out value="${v.boardIndex}"/><br>
+        <c:out value="${v.boardTitle}"/><br>
+        <c:out value="${v.boardContent}"/><br>
+        <c:out value="${v.boardDate}"/><br>
     </c:forEach>
 	
 	
