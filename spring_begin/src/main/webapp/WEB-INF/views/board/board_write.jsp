@@ -10,7 +10,7 @@
 
 	<form type="submit" action="/board/save">
 		<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="" />
-		<br>
+		<br> 
 		<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="" />
 		
 		<input id="btn_save" type="submit" value="저장" />
