@@ -20,7 +20,7 @@
      </select>
 
     <insert id="insertByBoardIndex" parameterType="java.util.HashMap">
-        INSERT INTO board (board_title, board_content) VALUES(#{boardMap.boardTitle}, #{boardMap.boardContent})
+        INSERT INTO board (board_title, 'board_content') VALUES(#{boardMap.boardTitle}, #{boardMap.boardContent})
         <!-- INSERT INTO board('board_title', 'board_content') VALUES(#{boardTitle}, #{boardContent}) -->
     </insert>
 
