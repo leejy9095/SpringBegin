@@ -37,10 +37,10 @@
 	
 	
 	<c:forEach items="${boardList}" var="v">
-        <c:out value="${v.boardIndex}"/><br>
+        <%-- <c:out value="${v.boardIndex}"/><br> --%>
         <c:out value="${v.boardTitle}"/><br>
         <c:out value="${v.boardContent}"/><br>
-        <c:out value="${v.boardDate}"/><br>
+        <%-- <c:out value="${v.boardDate}"/><br> --%>
     </c:forEach>
 	
 	
