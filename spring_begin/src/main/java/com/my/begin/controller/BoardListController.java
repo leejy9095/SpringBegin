@@ -40,7 +40,6 @@ public class BoardListController {
 		return "board/board_list";
 	}
 	
-	//datasource이용 connection을 직접 잡는 방식(write)
 	@RequestMapping(value = "/board/write", method = RequestMethod.GET)
 	public String boardWrite(Model model) {
 		logger.info("/write in");
@@ -48,7 +47,6 @@ public class BoardListController {
 		return "board/board_write";
 	}
 	
-	//datasource이용 connection을 직접 잡는 방식(Save)
 	@RequestMapping(value = "/board/save", method = RequestMethod.GET)
 	public String boardWrite(HttpServletRequest request, ModelMap modelMap) {
 		logger.info("/save in");
@@ -56,9 +54,6 @@ public class BoardListController {
 		String boardTitle = request.getParameter("input_title");
 		String boardContent = request.getParameter("input_content");
 		
-		System.out.println("inputTitle: " + boardTitle);
-	    System.out.println("inputContent: " + boardContent);
-	    
 	    HashMap<String, String> boardSaveMap = new HashMap();
 	    boardSaveMap.put("boardTitle", boardTitle);
 	    boardSaveMap.put("boardContent", boardContent);

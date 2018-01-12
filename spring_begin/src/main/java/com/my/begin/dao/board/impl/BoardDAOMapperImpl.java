@@ -30,11 +30,8 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
     
     @Override
     public void insertByBoardIndex(HashMap<String, String> boardSaveMap){
-    	System.out.println("1"+boardSaveMap);
         BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
-        System.out.println("222"+boardSaveMap);
         boardDAOMapper.insertByBoardIndex(boardSaveMap);
-        System.out.println("3"+boardSaveMap);
     }
 
 }

@@ -19,17 +19,17 @@
 <body>
 	<div class="container show-grid">
 		<div class="row">
-	      <div class="col-md-4 div_post"></div>
+	      <div class="col-md-4 div_post">1</div>
+	      <div class="col-md-4 div_post">2</div>
+	      <div class="col-md-4 div_post">3</div>
+	    </div>
+	    <div class="row">
+	      <div class="col-md-4 div_post">4</div>
 	      <div class="col-md-4 div_post"></div>
 	      <div class="col-md-4 div_post"></div>
 	    </div>
 	    <div class="row">
-	      <div class="col-md-4 div_post"></div>
-	      <div class="col-md-4 div_post"></div>
-	      <div class="col-md-4 div_post"></div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-4 div_post"></div>
+	      <div class="col-md-4 div_post">3</div>
 	      <div class="col-md-4 div_post"></div>
 	      <div class="col-md-4 div_post"></div>
 	    </div>
