@@ -17,31 +17,42 @@
 	<title>list page</title>
 </head>
 <body>
+
+<%
+	Object x = request.getAttribute("boardList");
+%>
+
+
 	<div class="container show-grid">
 		<div class="row">
-	      <div class="col-md-4 div_post">1</div>
-	      <div class="col-md-4 div_post">2</div>
-	      <div class="col-md-4 div_post">3</div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-4 div_post">4</div>
-	      <div class="col-md-4 div_post"></div>
-	      <div class="col-md-4 div_post"></div>
-	    </div>
-	    <div class="row">
-	      <div class="col-md-4 div_post">3</div>
-	      <div class="col-md-4 div_post"></div>
-	      <div class="col-md-4 div_post"></div>
-	    </div>
+	      <div class="col-md-4 div_post">
+	      	<div class="write_form">
+	      		<form type="submit" action="/board/save">
+					<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="" />
+					<br> 
+					<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="" />
+					
+					<input id="btn_save" type="submit" value="저장" />
+				</form>
+	      	</div>
+	      </div>
+	      <c:forEach items="${boardList}" var="v">
+	      	<div class="col-md-4 div_post">
+	      		<div class="view_form">
+	      		
+		      	</div>
+		      </div>
+		  </c:forEach>
+		</div>
 	</div>
 	
 	
-	<c:forEach items="${boardList}" var="v">
-        <%-- <c:out value="${v.boardIndex}"/><br> --%>
+	<%-- <c:forEach items="${boardList}" var="v">
+        <c:out value="${v.boardIndex}"/><br>
         <c:out value="${v.boardTitle}"/><br>
         <c:out value="${v.boardContent}"/><br>
-        <%-- <c:out value="${v.boardDate}"/><br> --%>
-    </c:forEach>
+        <c:out value="${v.boardDate}"/><br>
+    </c:forEach> --%>
 	
 	
 	
