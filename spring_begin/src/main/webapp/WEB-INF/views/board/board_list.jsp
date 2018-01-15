@@ -20,41 +20,45 @@
 
 <%
 	Object x = request.getAttribute("boardList");
+String test = "Hello Java";
+
+request.setAttribute("test", test);
 %>
 
 
 	<div class="container show-grid">
 		<div class="row">
-	      <div class="col-md-4 div_post">
-	      	<div class="write_form">
-	      		<form type="submit" action="/board/save">
-					<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="" />
-					<br> 
-					<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="" />
+	    	<div class="col-md-4 div_post">
+	      		<div class="write_form">
+	      			<form type="submit" action="/board/save">
+						<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="" />
+						<br> 
+						<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="" />
 					
-					<input id="btn_save" type="submit" value="저장" />
-				</form>
-	      	</div>
-	      </div>
-	      <c:forEach items="${boardList}" var="v">
+						<input id="btn_save" type="submit" value="저장" />
+					</form>
+	      		</div>
+	     	</div>
+	    <c:forEach items="${boardList}" var="v" varStatus="vStat">
+		
+		<c:if test="${vStat.index=='3' || vStat.index=='${pageScope.str}' }  ">
+		<div class="row">
+		</c:if>
+	      	
 	      	<div class="col-md-4 div_post">
 	      		<div class="view_form">
-	      		
+	      			<c:out value="${v.boardIndex}"/><br>
+			        <c:out value="${v.boardTitle}"/><br>
+			        <c:out value="${v.boardContent}"/><br>
+			        <c:out value="${v.boardDate}"/><br>
 		      	</div>
-		      </div>
+		    </div>
+
+
+		  
 		  </c:forEach>
 		</div>
 	</div>
-	
-	
-	<%-- <c:forEach items="${boardList}" var="v">
-        <c:out value="${v.boardIndex}"/><br>
-        <c:out value="${v.boardTitle}"/><br>
-        <c:out value="${v.boardContent}"/><br>
-        <c:out value="${v.boardDate}"/><br>
-    </c:forEach> --%>
-	
-	
 	
 	<!-- button section -->
 	<div class="">
