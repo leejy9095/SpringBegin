@@ -19,15 +19,15 @@
 <body>
 
 <%
-	Object x = request.getAttribute("boardList");
-String test = "Hello Java";
-
-request.setAttribute("test", test);
+	Object x = request.getAttribute("boardList");	/* 이런식으로 받아올수도있는거 예시 */
+	String test = "Hello Java";
+	int indexList = 0;
+	request.setAttribute("test", test);
 %>
 
 
 	<div class="container show-grid">
-		<div class="row">
+		<div class="row"> 
 	    	<div class="col-md-4 div_post">
 	      		<div class="write_form">
 	      			<form type="submit" action="/board/save">
@@ -41,10 +41,6 @@ request.setAttribute("test", test);
 	     	</div>
 	    <c:forEach items="${boardList}" var="v" varStatus="vStat">
 		
-		<c:if test="${vStat.index=='3' || vStat.index=='${pageScope.str}' }  ">
-		<div class="row">
-		</c:if>
-	      	
 	      	<div class="col-md-4 div_post">
 	      		<div class="view_form">
 	      			<c:out value="${v.boardIndex}"/><br>
@@ -53,11 +49,13 @@ request.setAttribute("test", test);
 			        <c:out value="${v.boardDate}"/><br>
 		      	</div>
 		    </div>
-
-
-		  
-		  </c:forEach>
+		    
+		<c:if test="${vStat.index=='2' || vStat.index=='${pageScope.str}'}">	<!-- 3으로 나눈나머지가 1일때 -->
 		</div>
+		<div class="row">
+		</c:if>
+		
+		</c:forEach>
 	</div>
 	
 	<!-- button section -->
