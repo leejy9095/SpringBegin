@@ -34,4 +34,14 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
         boardDAOMapper.insertByBoardIndex(boardSaveMap);
     }
 
+	@Override
+	public List<Board> selectByBoardIndex(Integer boardIndex) {
+		List<Board> boardList = new ArrayList<>();
+		
+		BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
+		boardList = boardDAOMapper.selectByBoardIndex(boardIndex);
+		
+		return boardList;
+	}
+
 }

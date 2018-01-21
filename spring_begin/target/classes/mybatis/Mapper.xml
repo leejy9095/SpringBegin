@@ -22,5 +22,8 @@
     <insert id="insertByBoardIndex" parameterType="java.util.HashMap">
     	INSERT INTO board(board_title,board_content) VALUES(#{boardMap.boardTitle},#{boardMap.boardContent})
     </insert>
+    
+    <select id="selectByBoardIndex"><!-- 이부분 get해서 id값으로 가져오는거 확인 -->
+    </select>
 
 </mapper>

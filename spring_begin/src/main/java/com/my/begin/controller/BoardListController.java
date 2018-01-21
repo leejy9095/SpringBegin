@@ -65,6 +65,21 @@ public class BoardListController {
 		
 		return "board/board_list";
 	}
+	
+	@RequestMapping(value = "/board/view", method = RequestMethod.GET)
+	public String boardView(HttpServletRequest request, Model model) {
+		logger.info("/view in");
+		
+		Integer boardIndex = Integer.parseInt(request.getParameter("input_Index"));
+		
+		System.out.println(boardIndex);
+		
+		List<Board> boardList = boardDAO.selectByBoardIndex(boardIndex);
+		model.addAttribute("boardList", boardList);
+		
+		return "board/board_list";
+	}
+	
 	/*
 	 @RequestMapping(value = "/listMapper", method = RequestMethod.GET)
 	    @ResponseBody//이건 리턴으로 리스트 자체를 반환

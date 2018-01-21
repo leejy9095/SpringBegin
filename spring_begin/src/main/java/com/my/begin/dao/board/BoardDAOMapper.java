@@ -14,4 +14,6 @@ public interface BoardDAOMapper {
 
 	void insertByBoardIndex(@Param("boardMap") HashMap<String, String> boardSaveMap);
 	
+	List<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
+	
 }
