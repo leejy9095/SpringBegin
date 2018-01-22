@@ -1,5 +1,6 @@
 package com.my.begin.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -70,14 +71,14 @@ public class BoardListController {
 	public String boardView(HttpServletRequest request, Model model) {
 		logger.info("/view in");
 		
-		Integer boardIndex = Integer.parseInt(request.getParameter("input_Index"));
+		Integer boardIndex = Integer.parseInt(request.getParameter("boardIndex"));
 		
-		System.out.println(boardIndex);
+		ArrayList<Board> boardList = boardDAO.selectByBoardIndex(boardIndex);
+		System.out.println(boardList);
 		
-		List<Board> boardList = boardDAO.selectByBoardIndex(boardIndex);
 		model.addAttribute("boardList", boardList);
 		
-		return "board/board_list";
+		return "board/board_view";
 	}
 	
 	/*

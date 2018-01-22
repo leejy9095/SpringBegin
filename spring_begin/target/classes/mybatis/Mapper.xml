@@ -23,7 +23,8 @@
     	INSERT INTO board(board_title,board_content) VALUES(#{boardMap.boardTitle},#{boardMap.boardContent})
     </insert>
     
-    <select id="selectByBoardIndex"><!-- 이부분 get해서 id값으로 가져오는거 확인 -->
+    <select id="selectByBoardIndex" parameterType="Integer" resultMap="MemberResultMap">
+    	SELECT * FROM board WHERE board_index=#{boardIndex}
     </select>
 
 </mapper>

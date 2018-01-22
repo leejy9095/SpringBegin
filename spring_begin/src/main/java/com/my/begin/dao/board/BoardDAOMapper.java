@@ -1,5 +1,6 @@
 package com.my.begin.dao.board;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,6 +15,6 @@ public interface BoardDAOMapper {
 
 	void insertByBoardIndex(@Param("boardMap") HashMap<String, String> boardSaveMap);
 	
-	List<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
+	ArrayList<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
 	
 }

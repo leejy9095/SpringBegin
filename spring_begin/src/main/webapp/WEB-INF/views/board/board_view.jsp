@@ -5,16 +5,25 @@
 <head>
 	<%@ include file="/WEB-INF/views/common/doc_header.jsp" %>
 	<title>view</title>
+	
 </head>
 <body>
+
+<% 
+	Object boardListObject = request.getAttribute("boardList");	/* 이런식으로 받아올수도있는거 예시 */
+	System.out.println(boardListObject);
+
+%>
 
 <div class="container show-grid">
 	<div class="row"> 
       	<div class="col-md-4">
       		<div class="form">
-				<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="" />
+				<span> 제목 : </span><span>${boardListObject}</span>
 				<br> 
-				<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="" />
+				<span> 내용 : </span><span><c:out value="${boardList[Board]}"/><br></span>
+				<br>
+				<span> 날짜 : </span><span><c:out value="${Board.boardDate}"/><br></span>
 				<br>
 				<br>
 				<input id="btn_save" type="submit" value="저장" />

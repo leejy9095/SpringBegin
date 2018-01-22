@@ -13,13 +13,11 @@
 	</style>	
 	
 	<title>list page</title>
-	<jsp:useBean id="mdatas" scope="request" class="java.util.ArrayList" /><!-- 이런식 예시 -->
 </head>
 <body>
 
 <%
 	Object x = request.getAttribute("boardList");	/* 이런식으로 받아올수도있는거 예시 */
-	
 %>
 
 
@@ -29,7 +27,7 @@
 	    <c:forEach items="${boardList}" var="v" varStatus="vStat">
 	      	<div class="col-md-4 div_post">
 	      		<div class="view_form">
-	      			<a href="/board/view"><c:out value="${v.boardIndex}"/><br></a>
+	      			<a href="/board/view?boardIndex=<c:out value='${v.boardIndex}'/>"/><c:out value='${v.boardIndex}'/></a><br>
 			        <c:out value="${v.boardTitle}"/><br>
 			        <c:out value="${v.boardContent}"/><br>
 			        <c:out value="${v.boardDate}"/><br>
