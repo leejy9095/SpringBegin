@@ -26,7 +26,7 @@
 				<span> 날짜 : </span><span><c:out value="${Board.boardDate}"/><br></span>
 				<br>
 				<br>
-				<input id="btn_save" type="submit" value="저장" />
+				<input id="btn_save" type="submit" value="수정" />
 			</div>
 		</div>
 	</div>
