@@ -13,8 +13,10 @@ public interface BoardDAOMapper {
 
 	//void insertByBoardIndex(@Param("boardTitle") String boardTitle, @Param("boardContent") String boardContent);
 
+	ArrayList<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
+
 	void insertByBoardIndex(@Param("boardMap") HashMap<String, String> boardSaveMap);
 	
-	ArrayList<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
+	void updateByBoardIndex(@Param("boardMap") HashMap<String, String> boardUpdateMap);
 	
 }

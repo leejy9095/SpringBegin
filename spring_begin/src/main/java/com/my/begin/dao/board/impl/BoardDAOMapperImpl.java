@@ -29,19 +29,26 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
     }
     
     @Override
+    public ArrayList<Board> selectByBoardIndex(Integer boardIndex) {
+    	ArrayList<Board> boardList = new ArrayList<>();
+    	
+    	BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
+    	boardList = boardDAOMapper.selectByBoardIndex(boardIndex);
+    	
+    	return boardList;
+    }
+
+    @Override
     public void insertByBoardIndex(HashMap<String, String> boardSaveMap){
         BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
         boardDAOMapper.insertByBoardIndex(boardSaveMap);
     }
 
 	@Override
-	public ArrayList<Board> selectByBoardIndex(Integer boardIndex) {
-		ArrayList<Board> boardList = new ArrayList<>();
+	public void updateByBoardIndex(HashMap<String, String> boardUpdateMap) {
+		 BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
+	     boardDAOMapper.updateByBoardIndex(boardUpdateMap);
 		
-		BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
-		boardList = boardDAOMapper.selectByBoardIndex(boardIndex);
-		
-		return boardList;
 	}
 
 }

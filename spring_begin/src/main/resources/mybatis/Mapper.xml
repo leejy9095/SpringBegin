@@ -19,12 +19,16 @@
         SELECT * FROM board
      </select> 
 
-    <insert id="insertByBoardIndex" parameterType="java.util.HashMap">
-    	INSERT INTO board(board_title,board_content) VALUES(#{boardMap.boardTitle},#{boardMap.boardContent})
-    </insert>
-    
     <select id="selectByBoardIndex" parameterType="Integer" resultMap="MemberResultMap">
     	SELECT * FROM board WHERE board_index=#{boardIndex}
     </select>
 
+    <insert id="insertByBoardIndex" parameterType="java.util.HashMap">
+    	INSERT INTO board(board_title,board_content) VALUES(#{boardMap.boardTitle},#{boardMap.boardContent})
+    </insert>
+    
+	<update id="updateByBoardIndex" parameterType="java.util.HashMap">
+		UPDATE board set board_
+	</update>
+	
 </mapper>

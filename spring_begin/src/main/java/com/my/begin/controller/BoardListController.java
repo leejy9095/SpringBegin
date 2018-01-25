@@ -74,11 +74,42 @@ public class BoardListController {
 		Integer boardIndex = Integer.parseInt(request.getParameter("boardIndex"));
 		
 		ArrayList<Board> boardList = boardDAO.selectByBoardIndex(boardIndex);
-		System.out.println(boardList);
 		
 		model.addAttribute("boardList", boardList);
 		
 		return "board/board_view";
+	}
+	
+	@RequestMapping(value = "/board/edit", method = RequestMethod.GET)
+	public String boardEdit(HttpServletRequest request, Model model) {
+		logger.info("/edit in");
+		
+		Integer boardIndex = Integer.parseInt(request.getParameter("boardIndex"));
+		
+		ArrayList<Board> boardList = boardDAO.selectByBoardIndex(boardIndex);
+		
+		model.addAttribute("boardList", boardList);
+		
+		return "board/board_edit";
+	}
+	
+	@RequestMapping(value = "/board/update", method = RequestMethod.GET)
+	public String boardUpdate(HttpServletRequest request, ModelMap modelMap) {
+		logger.info("/update in");
+		
+		String boardTitle = request.getParameter("input_title");
+		String boardContent = request.getParameter("input_content");
+		
+	    HashMap<String, String> boardUpdateMap = new HashMap();
+	    boardUpdateMap.put("boardTitle", boardTitle);
+	    boardUpdateMap.put("boardContent", boardContent);
+	    
+	    boardDAO.updateByBoardIndex(boardUpdateMap);
+	    List<Board> boardList = boardDAO.findAll();
+
+	    modelMap.put("boardList", boardList);
+		
+		return "board/board_list";
 	}
 	
 	/*

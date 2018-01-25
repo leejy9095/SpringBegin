@@ -9,24 +9,18 @@
 </head>
 <body>
 
-<% 
-	Object boardListObject = request.getAttribute("boardList");	/* 이런식으로 받아올수도있는거 예시 */
-	System.out.println(boardListObject);
-
-%>
-
 <div class="container show-grid">
 	<div class="row"> 
       	<div class="col-md-4">
       		<div class="form">
-				<span> 제목 : </span><span>${boardListObject}</span>
+				<span> 제목 : </span><span><c:out value="${boardList[0].boardTitle}"/></span>	
 				<br> 
-				<span> 내용 : </span><span><c:out value="${boardList[Board]}"/><br></span>
+				<span> 내용 : </span><span><c:out value="${boardList[0].boardContent}"/></span>	<!-- C턔끄로 빠로 싸용 -->
 				<br>
-				<span> 날짜 : </span><span><c:out value="${Board.boardDate}"/><br></span>
+				<span> 날짜 : </span><span><c:out value="${boardList[0].boardDate}"/></span>
 				<br>
 				<br>
-				<input id="btn_save" type="submit" value="수정" />
+				<button id="btn_edit" onclick="location.href='/board/edit?boardIndex=${boardList[0].boardIndex}'">수정</button>	<!-- 끄냥 빠로 싸용 -->
 			</div>
 		</div>
 	</div>
