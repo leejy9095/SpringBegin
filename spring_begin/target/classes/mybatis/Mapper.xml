@@ -28,7 +28,7 @@
     </insert>
     
 	<update id="updateByBoardIndex" parameterType="java.util.HashMap">
-		UPDATE board set board_
+		UPDATE board set board_title =
 	</update>
 	
 </mapper>
