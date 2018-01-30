@@ -97,10 +97,12 @@ public class BoardListController {
 	public String boardUpdate(HttpServletRequest request, ModelMap modelMap) {
 		logger.info("/update in");
 		
+		String boardIndex = request.getParameter("input_index");
 		String boardTitle = request.getParameter("input_title");
 		String boardContent = request.getParameter("input_content");
 		
 	    HashMap<String, String> boardUpdateMap = new HashMap();
+	    boardUpdateMap.put("boardIndex", boardIndex);
 	    boardUpdateMap.put("boardTitle", boardTitle);
 	    boardUpdateMap.put("boardContent", boardContent);
 	    

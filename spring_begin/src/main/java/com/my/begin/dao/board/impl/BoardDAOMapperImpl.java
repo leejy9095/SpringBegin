@@ -48,7 +48,6 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
 	public void updateByBoardIndex(HashMap<String, String> boardUpdateMap) {
 		 BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
 	     boardDAOMapper.updateByBoardIndex(boardUpdateMap);
-		
 	}
 
 }

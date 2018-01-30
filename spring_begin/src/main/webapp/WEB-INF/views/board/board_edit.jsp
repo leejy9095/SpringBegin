@@ -13,6 +13,8 @@
       	<div class="col-md-4">
       		<div class="view_form">
 				<form type="submit" action="/board/update">
+					<input id="input_index" name="input_index" size="30" type="hidden" value="<c:out value="${boardList[0].boardIndex}"/>" />
+					
 					<span> 제목 : </span><input id="input_title" name="input_title" size="30" type="text" value="<c:out value="${boardList[0].boardTitle}"/>" />
 					<br> 
 					<span> 내용 : </span><input id="input_content" name="input_content" style="height:100px;" size="30" type="text" value="<c:out value="${boardList[0].boardContent}"/>" />
