@@ -18,7 +18,15 @@
     <select id="findAll" resultMap="MemberResultMap">
         SELECT * FROM board
      </select> 
-
+	
+	<select id="selectCountAll" resultType="java.lang.Integer">
+        SELECT count(board_index) FROM board
+     </select> 
+	
+	<select id="selectAllLimit" resultMap="MemberResultMap">
+        SELECT * FROM board LIMIT #{boardStartNum}, #{boardEndNum}
+     </select> 
+	
     <select id="selectByBoardIndex" parameterType="Integer" resultMap="MemberResultMap">
     	SELECT * FROM board WHERE board_index=#{boardIndex}
     </select>

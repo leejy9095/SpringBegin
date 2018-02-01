@@ -27,6 +27,26 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
     	
     	return boardList;
     }
+
+	@Override
+	public Integer selectCountAll() {
+		int listCnt = 0;
+		
+		BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
+		listCnt = boardDAOMapper.selectCountAll();
+		
+		return listCnt;
+	}
+    
+    @Override
+	public ArrayList<Board> selectAllLimit(Integer boardStartNum, Integer boardEndNum) {
+    	ArrayList<Board> boardList = new ArrayList<>();
+    	
+    	BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
+    	boardList = boardDAOMapper.selectAllLimit(boardStartNum, boardEndNum);
+    	
+    	return boardList;
+	}
     
     @Override
     public ArrayList<Board> selectByBoardIndex(Integer boardIndex) {
@@ -49,5 +69,6 @@ public class BoardDAOMapperImpl implements BoardDAOMapper{
 		 BoardDAOMapper boardDAOMapper = sqlSession.getMapper(BoardDAOMapper.class);
 	     boardDAOMapper.updateByBoardIndex(boardUpdateMap);
 	}
+
 
 }

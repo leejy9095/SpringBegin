@@ -12,6 +12,10 @@ public interface BoardDAOMapper {
 	List<Board> findAll();
 
 	//void insertByBoardIndex(@Param("boardTitle") String boardTitle, @Param("boardContent") String boardContent);
+	
+	Integer selectCountAll();
+	
+	ArrayList<Board> selectAllLimit(@Param("boardStartNum") Integer boardStartNum, @Param("boardEndNum") Integer boardEndNum);
 
 	ArrayList<Board> selectByBoardIndex(@Param("boardIndex") Integer boardIndex);
 
