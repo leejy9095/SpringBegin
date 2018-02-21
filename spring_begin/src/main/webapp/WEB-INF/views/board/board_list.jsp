@@ -51,7 +51,7 @@
 			    <li class="page-item"><a class="page-link" href="#">4</a></li>
 			    <li class="page-item"><a class="page-link" href="#">4</a></li>
 			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">>></a></li>
+			    <li class="page-item"><a class="page-link" href="#">>></a></li> 
 			</ul>
 		</nav>
 	</div>
